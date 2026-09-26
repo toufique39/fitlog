@@ -2,7 +2,7 @@ import { Workout } from "../types/workout";
 
 
 const API_BASE_URL =
-  "https://api.abcz.workers.dev/api/fitlog";
+  "https://api.api-store.workers.dev/api/fitlog";
 
 export async function getAllWorkouts(): Promise<Workout[]> {
   const response = await fetch(API_BASE_URL);
@@ -18,16 +18,12 @@ export async function getAllWorkouts(): Promise<Workout[]> {
 
 export async function getWorkoutById(
   id: number
-): Promise<Workout> {
-  const response = await fetch(
-    `${API_BASE_URL}/${id}`
+): Promise<Workout | null> {
+  const workouts = await getAllWorkouts();
+
+  const workout = workouts.find(
+    (item) => item.id === id
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch workout details");
-  }
-
-  const data: Workout = await response.json();
-
-  return data;
+  return workout ?? null;
 }

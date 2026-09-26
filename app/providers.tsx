@@ -4,7 +4,7 @@
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FitLogProvider } from "../context/FitLogContext";
+import { FitLogProvider } from "../src/context/FitLogContext";
 
 interface ProvidersProps {
   children: React.ReactNode;

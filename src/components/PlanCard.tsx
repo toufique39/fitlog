@@ -27,11 +27,13 @@ export default function PlanCard({
     <article className="flex flex-col gap-4 rounded-md border border-[#242832] bg-[#111318] p-3 sm:flex-row sm:items-center">
 
       {/* Image */}
-      <img
-        src={workout.image}
-        alt={workout.name}
-        className="h-24 w-full rounded object-cover sm:h-16 sm:w-24"
-      />
+     <div className="bg-[#151820]">
+  <img
+    src={workout.image}
+    alt={workout.name}
+    className="h-[320px] w-full object-cover sm:h-[420px] md:h-full md:min-h-[650px]"
+  />
+</div>
 
       {/* Main Info */}
       <div className="min-w-0 flex-1">
