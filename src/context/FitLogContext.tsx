@@ -63,20 +63,13 @@ export function FitLogProvider({
     readStored("fitlog-completed", [])
   );
 
-  // --------------------------------------------------
-  // Hydration state
-  // --------------------------------------------------
+  
 
   const [hydrated] = useState(true);
 
-  // --------------------------------------------------
-  // Load data from localStorage
-  // --------------------------------------------------
+ 
 
 
-  // --------------------------------------------------
-  // Save plan to localStorage
-  // --------------------------------------------------
 
   useEffect(() => {
     if (!hydrated) return;
@@ -87,9 +80,6 @@ export function FitLogProvider({
     );
   }, [plan, hydrated]);
 
-  // --------------------------------------------------
-  // Save saved workouts to localStorage
-  // --------------------------------------------------
 
   useEffect(() => {
     if (!hydrated) return;
@@ -100,9 +90,7 @@ export function FitLogProvider({
     );
   }, [saved, hydrated]);
 
-  // --------------------------------------------------
-  // Save completed workouts to localStorage
-  // --------------------------------------------------
+
 
   useEffect(() => {
     if (!hydrated) return;
@@ -113,9 +101,7 @@ export function FitLogProvider({
     );
   }, [completedIds, hydrated]);
 
-  // --------------------------------------------------
-  // Add workout to today's plan
-  // --------------------------------------------------
+
 
   const addToPlan = (workout: Workout) => {
     const alreadyExists = plan.some(
@@ -147,9 +133,7 @@ export function FitLogProvider({
     );
   };
 
-  // --------------------------------------------------
-  // Save workout for later
-  // --------------------------------------------------
+  
 
   const saveForLater = (workout: Workout) => {
     const alreadySaved = saved.some(
@@ -173,9 +157,6 @@ export function FitLogProvider({
     );
   };
 
-  // --------------------------------------------------
-  // Remove workout from today's plan
-  // --------------------------------------------------
 
   const removeFromPlan = (id: number) => {
     setPlan((currentPlan) =>
