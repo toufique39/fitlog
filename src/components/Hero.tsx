@@ -49,9 +49,7 @@ export default function Hero() {
 
           </div>
 
-          {/* =========================
-              RIGHT IMAGE
-          ========================== */}
+         
           <div className="relative min-h-[280px] overflow-hidden bg-[#151820] md:min-h-[390px]">
 
             <img
