@@ -7,17 +7,14 @@ export default function Hero() {
 
         <div className="grid overflow-hidden rounded-md border border-[#242832] bg-[#111318] md:grid-cols-[1.15fr_0.85fr]">
 
-          {/* =========================
-              LEFT CONTENT
-          ========================== */}
+          
           <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10">
 
-            {/* Eyebrow */}
+           
             <p className="mb-3 text-[9px] font-black uppercase tracking-[0.2em] text-[#ccff00]">
               Workout Library
             </p>
 
-            {/* Heading */}
             <h1 className="max-w-2xl font-['Impact'] text-5xl uppercase leading-[0.84] tracking-tight text-white sm:text-6xl md:text-7xl">
 
               Train With Intent.
@@ -29,7 +26,7 @@ export default function Hero() {
 
             </h1>
 
-            {/* Description */}
+            
             <p className="mt-5 max-w-xl text-xs leading-6 text-[#8b929f] sm:text-sm">
               FitLog is a dark, no-nonsense gym companion:
               pick a lift, lock it into todays plan, and
