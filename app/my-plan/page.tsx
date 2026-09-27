@@ -6,11 +6,11 @@ import {
 } from "react";
 
 import Link from "next/link";
-import { useFitLog } from "@/src/context/FitLogContext";
-import Navbar from "@/src/components/Navbar";
-import PlanCard from "@/src/components/PlanCard";
-import Footer from "@/src/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import PlanCard from "@/components/PlanCard";
 
+import { useFitLog } from "@/context/FitLogContext";
 
 
 type Tab = "plan" | "saved";

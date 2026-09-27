@@ -1,18 +1,18 @@
-import Footer from "@/src/components/Footer";
-import Hero from "@/src/components/Hero";
-import Navbar from "@/src/components/Navbar";
-import WorkoutLibrary from "@/src/components/WorkoutLibrary";
-
-
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import WorkoutLibrary from "@/components/WorkoutLibrary";
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
+
       <main>
         <Hero />
         <WorkoutLibrary />
       </main>
+
       <Footer />
     </>
   );

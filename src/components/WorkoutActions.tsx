@@ -1,11 +1,7 @@
 "use client";
 
-import { useFitLog } from "../context/FitLogContext";
-import { Workout } from "../types/workout";
-
-
-
-
+import type { Workout } from "@/types/workout";
+import { useFitLog } from "@/context/FitLogContext";
 
 interface WorkoutActionsProps {
   workout: Workout;
@@ -29,29 +25,42 @@ export default function WorkoutActions({
     (item) => item.id === workout.id
   );
 
+  const planIsFull = plan.length >= 5;
+
   return (
-    <div className="mt-6 flex flex-wrap gap-2">
+    <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+
+      {/* =========================
+          Add To Today's Plan
+      ========================== */}
 
       <button
         type="button"
         onClick={() => addToPlan(workout)}
-        disabled={isInPlan || plan.length >= 5}
-        className={`fitlog-primary-btn ${
-          isInPlan || plan.length >= 5
+        disabled={isInPlan || planIsFull}
+        className={`fitlog-primary-btn flex-1 sm:flex-none ${
+          isInPlan || planIsFull
             ? "cursor-not-allowed opacity-50"
             : ""
         }`}
       >
         {isInPlan
           ? "✓ In Today's Plan"
-          : "＋ Add to Today's Plan"}
+          : planIsFull
+            ? "Plan Full"
+            : "＋ Add to Today's Plan"}
       </button>
+
+
+      {/* =========================
+          Save For Later
+      ========================== */}
 
       <button
         type="button"
         onClick={() => saveForLater(workout)}
         disabled={isSaved}
-        className={`fitlog-secondary-btn ${
+        className={`fitlog-secondary-btn flex-1 sm:flex-none ${
           isSaved
             ? "cursor-not-allowed opacity-50"
             : ""
